@@ -1,0 +1,23 @@
+.card-grid {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content:start ;
+  width: 70%;
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .card-grid{
+   width: 90%;
+   align-items: center;
+   gap: 40px;
+  }
+ }
+
+ @media (max-width: 480px) {
+  .card-grid{
+   width: 100%;
+  
+  }
+ }
+

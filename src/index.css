@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #87CF8B;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Reset margin and padding for body and root */
+body, .root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #87CF8B;
+}
+
+/* Ensure the root element takes full height */
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add some padding to the main content to avoid overlapping with the fixed navbar */
+.main-tasks {
+  padding-top: 80px; /* Adjust based on the height of the navbar */
+}
+

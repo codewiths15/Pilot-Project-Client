@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #87CF8B;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  min-height:100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #87CF8B; /* Ensure background color covers full height */
 }
 
-.App-link {
-  color: #61dafb;
+.main-tasks {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 30px;
+  padding-top: 130px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.check-list-main {
+  width: 25%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .app-header {
+    padding: 50px 0 70px 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app-title {
+    font-size: 3rem;
   }
+
+  .app-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .notice-container {
+    width: 80%;
+  }
+
+  .notice {
+    padding: 12px;
+  }
+
+  .notice-text {
+    font-size: 0.9rem;
+  }
+  .check-list-main {
+    width: 0%;
+  }
+
+  .main-tasks {
+    justify-content: center;
+    width: 100%;
+}
+
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 40px 0 60px 0;
+  }
+
+  .app-title {
+    font-size: 2.5rem;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+  }
+
+  .notice-container {
+    width: 70%;
+  }
+
+  .notice {
+    padding: 10px;
+  }
+
+  .notice-text {
+    font-size: 0.85rem;
+  }
+
+  .header-keywords {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .keyword-text {
+    font-size: 16px;
+  }
+
+  .check-list-main {
+    width: 0%;
+  }
+
+  .main-tasks {
+    justify-content: center;
+    width: 100%;
+}
+  
+}
+
+@media (max-width: 480px) {
+  .notice-container {
+    width: 70%;
+  }
+
+  .notice {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .notice svg {
+    margin-bottom: 10px;
+  }
+
+  .notice-text {
+    font-size: 0.8rem;
+  }
+
+  .main-tasks {
+    padding: 150px 10px;
+}
 }

@@ -1,0 +1,504 @@
+/* Card Styles */
+.extra-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.icons-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.icons-right {
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid #0074c3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #144C8C;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.icons-right:hover {
+  transform: translateY(-10px);
+}
+
+.icons-right:hover .icon-label {
+  opacity: 1;
+  transform: translateX(10px);
+}
+
+.icon-label {
+  position: absolute;
+  left: 27px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  background-color: #0074c3;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.icons-right.apply-icon .icon-label::after {
+  content: "Apply";
+}
+
+.icons-right.share-icon .icon-label::after {
+  content: "Share";
+}
+
+.icons-right.discuss-icon .icon-label::after {
+  content: "Discuss";
+}
+
+
+.card1 {
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: white;
+}
+
+.card-header1 {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.card-head1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+
+.company-logo {
+  max-width: 60px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.domain-applicant {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.applicant {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.applicant p {
+  margin: 0;
+  color: #535565;
+}
+
+.domain {
+  padding: 5px 10%;
+  background-color: #56cdad2b;
+  text-align: center;
+  border-radius: 20px;
+  color: #11A5BA;
+
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-info p {
+  margin: 2px 0;
+  font-size: 1rem;
+  color: #1C242C;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-family: "Greycliff", sans-serif;
+  color: #544350;
+}
+
+.expand-button1 {
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.time-remaining {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  background-color: #11a6ba38;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.time-remaining.over {
+  background-color: #ffcccb;
+  /* Light red background */
+
+}
+
+.time-remaining p {
+  margin: 0;
+  font-size: 13px;
+  color: rgb(84, 84, 84);
+  font-weight: 600;
+}
+
+.card-info1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-id {
+  color: #144cbc;
+}
+
+.task-name {
+  color: #535565;
+}
+
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 10px;
+  flex-grow: 1;
+  font-size: 1rem;
+}
+
+.card.expanded .card-content {
+  max-height: 300px;
+  padding: 10px;
+}
+
+.expand {
+  background-color: #11A5BA;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.card-content.scrollable {
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 2px solid rgb(221, 221, 221);
+  padding-top: 15px;
+  background-color: #f2efeba9;
+  font-family: "Greycliff", sans-serif;
+  font-size: 0.9rem;
+}
+
+
+.card-content.scrollable p {
+  width: 90%;
+}
+
+.card-content.scrollable p strong {
+  color: #535565;
+  font-size: 1rem;
+}
+
+.apply-button {
+  background: linear-gradient(to bottom right, #0074C3, #11A5BA);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.button-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+.button-icons p {
+  margin: 0;
+}
+
+.apply-button.disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.apply-button:hover:not(.disabled) {
+  background-color: darkblue;
+}
+
+.gap-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+.gap-list p {
+  margin: 0;
+}
+
+.skills {
+  list-style-type: none;
+}
+
+.nice-to-haves {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nice-to-haves li {
+  display: flex;
+  align-items: center;
+}
+
+.tick-icon {
+  margin-right: 5px;
+}
+
+.last-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.share-button {
+  background-color: #144C8C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.share-button:hover {
+  background-color: #1667c4;
+}
+
+.task-over {
+  color: white;
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.discuss-button {
+  background-color: #fcb32a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.discuss-button:hover {
+  background-color: #f7a102;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .card1 {
+    width: 98%;
+  }
+
+  .card-info h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card1 {
+    width: 90%;
+
+  }
+
+  .card-info {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 860px) {
+  .domain-applicant {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .card-head1 {
+    width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card1 {
+    width: calc(100% - 10px);
+
+    padding: 10px;
+    flex-direction: column;
+    /* Change to column direction for mobile */
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .domain {
+   
+    font-size: 0.7rem;
+    padding: 2px 20px;
+  }
+
+  .applicant p {
+    font-size: 0.6rem;
+  }
+
+  .main-applicant{
+    width: 100%;
+    border-top: 1px solid rgb(219, 219, 219);
+  }
+
+  .applicant{
+    justify-content: start;
+    margin-top: 10px;
+  }
+
+  .time-remaining p {
+    font-size: 0.6rem;
+  }
+
+  .time-remaining{
+    gap: 2px;
+   height: 20px;
+    
+  }
+
+  .time-remaining svg{
+    width: 0.8rem;
+    height: auto;
+  }
+
+  .card-header1{
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .expand-button1{
+    flex-direction: row ;
+  }
+
+  .card-head1{
+    width: 100%;
+  }
+  .card-info {
+
+    width: 100%;
+    /* Change to column direction for mobile */
+  }
+
+  .domain-applicant {
+    gap: 15px;
+
+}
+
+  .card-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .card-info p {
+    font-size: 0.7rem;
+  }
+
+  .expand-button1 {
+    height: 100%;
+  }
+
+  .expand {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    border-radius: 5px;
+  }
+
+  .apply-button {
+    padding: 6px 15px;
+  }
+
+  .card-content.scrollable p {
+    font-size: 0.8rem;
+  }
+
+  .last-button {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* Adjust the gap between buttons as needed */
+  }
+
+  .icon-label {
+    display: none;
+  }
+
+  .discuss-button {
+    margin-left: 0;
+  }
+
+  .apply-button {
+    margin-right: 0;
+  }
+
+  .icons-right svg{
+    width: 0.8rem;
+    height: auto;
+  }
+
+  .extra-card{
+    gap: 5px;
+  }
+}
