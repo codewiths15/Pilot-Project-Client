@@ -23,7 +23,7 @@ const ApplicationForm = ({
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/forms/${studentNumber}`
+          `https://api.linksus.in/api/forms/${studentEmail}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -36,15 +36,15 @@ const ApplicationForm = ({
       }
     };
 
-    if (studentNumber !== "") {
+    if (studentEmail !== "") {
       fetchData();
     }
-  }, [studentNumber]);
+  }, [studentEmail]);
 
   const handleAutofill = () => {
     if (formData) {
       setStudentName(formData.name);
-      setStudentEmail(formData.email);
+      setStudentNumber(formData.phone);
     }
   };
 
@@ -52,7 +52,7 @@ const ApplicationForm = ({
     e.preventDefault();
 
     const applicationResponse = await fetch(
-      "http://localhost:5000/api/applications/submit",
+      "https://api.linksus.in/api/applications/submit",
       {
         method: "POST",
         headers: {
@@ -74,7 +74,7 @@ const ApplicationForm = ({
 
     if (applicationResponse.ok) {
       const certificateResponse = await fetch(
-        "http://localhost:5000/api/certificates",
+        "https://api.linksus.in/api/certificates",
         {
           method: "POST",
           headers: {
@@ -136,7 +136,7 @@ const ApplicationForm = ({
           <img src={tickImage} alt="Success Tick" width={40} height={40} />
           <div className="extra-box">CONGRATULATIONS !!</div>
         </div>
-       
+
         {!showTextarea ? (
           <div className="confirm-text">
             <h2>Your task is submitted successfully!</h2>
@@ -146,7 +146,12 @@ const ApplicationForm = ({
               goodies. Also you will receive your experience letter for the task
               via email!
             </p>
-            <button className="next-button-message" onClick={() => setShowTextarea(true)}>Next</button>
+            <button
+              className="next-button-message"
+              onClick={() => setShowTextarea(true)}
+            >
+              Next
+            </button>
           </div>
         ) : (
           <div className="confirm-text">
@@ -157,7 +162,9 @@ const ApplicationForm = ({
               className="post-content-textarea"
             />
             <div className="message-buttons">
-              <button className="copy-button" onClick={handleCopy}>Copy the Caption</button>
+              <button className="copy-button" onClick={handleCopy}>
+                Copy the Caption
+              </button>
               <button onClick={() => window.open(linkedInUrl, "_blank")}>
                 Share on LinkedIn
               </button>
@@ -176,16 +183,8 @@ const ApplicationForm = ({
       <h2>Application Form</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Task ID:
-          <input type="text" value={taskId} readOnly />
-        </label>
-        <label>
           Task Name:
           <input type="text" value={taskName} readOnly />
-        </label>
-        <label>
-          Company Id:
-          <input type="text" value={companyId} readOnly />
         </label>
         <label>
           Company Name:
@@ -196,11 +195,11 @@ const ApplicationForm = ({
           <input type="text" value={domain} readOnly />
         </label>
         <label>
-          Student Phone Number:
+          Student Email:
           <input
-            type="text"
-            value={studentNumber}
-            onChange={(e) => setStudentNumber(e.target.value)}
+            type="email"
+            value={studentEmail}
+            onChange={(e) => setStudentEmail(e.target.value)}
             required
           />
           {formData && (
@@ -209,21 +208,23 @@ const ApplicationForm = ({
             </button>
           )}
         </label>
+
+        <label>
+          Student Phone Number:
+          <input
+            type="text"
+            value={studentNumber}
+            onChange={(e) => setStudentNumber(e.target.value)}
+            required
+          />
+        </label>
+
         <label>
           Student Name:
           <input
             type="text"
             value={studentName}
             onChange={(e) => setStudentName(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Student Email:
-          <input
-            type="email"
-            value={studentEmail}
-            onChange={(e) => setStudentEmail(e.target.value)}
             required
           />
         </label>

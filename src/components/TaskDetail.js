@@ -23,10 +23,14 @@ const TaskDetail = ({ cards }) => {
   return (
     <div className="task-detail-container">
       <div className="task-detail-box">
-        <h2>{task.name}</h2>
+        <div className="top-company-title">
+          <img src={task.companyLogo} alt="company-logo" />
+          <h2>{task.name}</h2>
+        </div>
         <p>
           <strong>Company:</strong> {task.companyName}
         </p>
+
         <p>
           <strong>Domain:</strong> {task.domain}
         </p>
@@ -39,14 +43,14 @@ const TaskDetail = ({ cards }) => {
         <p>
           <strong>Tech Stacks:</strong>{" "}
           {task.skill.map((item, index) => (
-            <li key={index}>
+            <div key={index}>
               <span className="tick-icon">✔️</span>
               {item}
-            </li>
+            </div>
           ))}
         </p>
         <p>
-          <strong>Incentive:</strong> {task.stipend}
+          <strong>Incentive:</strong> ${task.stipend}.00
         </p>
         <p>
           <strong>Helpful Links:</strong>{" "}
@@ -57,10 +61,10 @@ const TaskDetail = ({ cards }) => {
         <p>
           <strong>Nice to Haves:</strong>{" "}
           {task.nice.map((item, index) => (
-            <li key={index}>
+            <div key={index}>
               <span className="tick-icon">✔️</span>
               {item}
-            </li>
+            </div>
           ))}
         </p>
         <p>

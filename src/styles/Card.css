@@ -150,7 +150,7 @@
 }
 
 .expand-button1 {
-  height: 65%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -210,7 +210,7 @@
 
 .expand {
   background-color: #11A5BA;
-  padding: 8px 20px;
+  padding: 8px 14px;
   border: none;
   border-radius: 20px;
   color: white;

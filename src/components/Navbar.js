@@ -29,13 +29,18 @@ const Navbar = () => {
         </div>
         <button className="get-linksus">Get LinksUs</button>
         <div className="hamburger" onClick={toggleMenu}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path fill="#545454" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path fill="#545454" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
           </svg>
         </div>
       </div>
       {isOpen && (
-        <div className={`nav-section1-mobile ${isOpen ? 'open' : 'close'}`}>
+        <div className={`nav-section1-mobile ${isOpen ? "open" : "close"}`}>
           <a href="">About</a>
           <a href="">Use Cases</a>
           <a href="">Tools</a>
